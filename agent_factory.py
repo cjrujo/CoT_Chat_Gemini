@@ -11,7 +11,9 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 load_dotenv()
 
 # Check for Google API Key
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = st.secrets.get("GOOGLE_API_KEY")
+
 if not GOOGLE_API_KEY:
     raise ValueError("Google API Key is missing. Please add it to your .env file or set it as an environment variable.")
 
